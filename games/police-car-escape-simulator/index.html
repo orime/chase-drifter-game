@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Car Escape Simulator - Desert Chase Action Game | ChaseDrifter.com</title>
+    <meta name="description" content="Escape pursuing police cars in desert landscapes with Police Car Escape Simulator! Use rockets and driving skills to neutralize chasers in this action-packed game.">
+    <meta name="keywords" content="Police Car Escape Simulator, police escape game, desert racing, car chase game, rocket vehicles, free online games">
+    <link rel="canonical" href="https://chasedrifter.com/games/police-car-escape-simulator">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-green': '#34C759',
+                        'apple-red': '#FF3B30',
+                        'apple-gray': '#8E8E93',
+                        'apple-light': '#F2F2F7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-apple-light text-gray-800 font-sans">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <a href="/" class="text-2xl font-bold text-apple-blue">ChaseDrifter.com</a>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-apple-blue transition-colors">Home</a></li>
+                    <li><a href="#game" class="hover:text-apple-blue transition-colors">Play Game</a></li>
+                    <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
+                    <li><a href="#instructions" class="hover:text-apple-blue transition-colors">How to Play</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-blue">Police Car Escape Simulator</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Escape from pursuing police cars in stylized desert landscapes, using rockets and exceptional driving skills to neutralize your pursuers.</p>
+        </section>
+
+        <section id="game" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="relative">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe src="https://gamebol.com/gamefile/Police_Car_Escape_Simulator/index.html" 
+                                class="w-full h-[600px] border-0" 
+                                allowfullscreen 
+                                loading="lazy">
+                        </iframe>
+                    </div>
+                    <button onclick="toggleFullscreen()" class="absolute bottom-4 right-4 bg-apple-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        Toggle Fullscreen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-apple-blue">About Police Car Escape Simulator</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <p class="mb-4">Police Car Escape Simulator is an action-packed escape game set in a stylized desert landscape. Take control of a high-speed vehicle equipped with rockets as you attempt to outrun and neutralize pursuing police cars.</p>
+                        <p class="mb-4">The game features captivating sound effects and visually appealing graphics that enhance your gaming experience. With four different vehicle options, each with unique characteristics of speed and durability, you can choose the perfect car for your escape strategy.</p>
+                        <p>Your main objective is to score as high as possible by neutralizing police cars that are in pursuit. Use your driving skills to cause police vehicles to crash into surrounding objects and obstacles throughout the desert terrain.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-apple-green">Game Features</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Four unique vehicles with different speed and durability characteristics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Rocket weapons to neutralize pursuing police cars</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Stylized desert landscapes as your escape terrain</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Score-based gameplay with increasing difficulty</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Captivating sound effects and graphics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Strategic gameplay requiring both driving skills and tactical thinking</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructions" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-apple-blue">How to Play</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Controls</h3>
+                        <p>Use WASD or arrow keys to control your vehicle's movement. Master these controls to outmaneuver pursuing police cars.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Weapons</h3>
+                        <p>Use the mouse to aim and shoot rockets from your vehicle when necessary to neutralize pursuing police cars.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Objectives</h3>
+                        <p>Score points by neutralizing police cars. Use the environment to your advantage by causing police cars to crash into obstacles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Police Car Escape Simulator</h2>
+                    <p class="text-gray-400">An action-packed escape game that combines tactical driving with rocket combat in stylized desert landscapes.</p>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Quick Links</h2>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/" class="hover:text-apple-blue transition-colors">Home</a></li>
+                        <li><a href="#game" class="hover:text-apple-blue transition-colors">Play Game</a></li>
+                        <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
+                        <li><a href="#instructions" class="hover:text-apple-blue transition-colors">How to Play</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Legal</h2>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-apple-blue transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ChaseDrifter.com - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html> 

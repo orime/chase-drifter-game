@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift Car Multiplayer - Competitive Drifting Game | ChaseDrifter.com</title>
+    <meta name="description" content="Compete with players worldwide in Drift Car Multiplayer! Experience realistic drifting physics, customize your cars, and become the best drifter in this action-packed racing game.">
+    <meta name="keywords" content="Drift Car Multiplayer, drifting game, multiplayer racing, car customization, online racing game, free online games">
+    <link rel="canonical" href="https://chasedrifter.com/games/drift-car-multiplayer">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-green': '#34C759',
+                        'apple-red': '#FF3B30',
+                        'apple-gray': '#8E8E93',
+                        'apple-light': '#F2F2F7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-apple-light text-gray-800 font-sans">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <a href="/" class="text-2xl font-bold text-apple-blue">ChaseDrifter.com</a>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-apple-blue transition-colors">Home</a></li>
+                    <li><a href="#game" class="hover:text-apple-blue transition-colors">Play Game</a></li>
+                    <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
+                    <li><a href="#instructions" class="hover:text-apple-blue transition-colors">How to Play</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-blue">Drift Car Multiplayer</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the thrill of competitive drifting in this action-packed multiplayer racing game with realistic physics and extensive customization options.</p>
+        </section>
+
+        <section id="game" class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="relative">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe src="https://gamebol.com/gamefile/Drift_Car_Multiplayer/index.html" 
+                                class="w-full h-[600px] border-0" 
+                                allowfullscreen 
+                                loading="lazy">
+                        </iframe>
+                    </div>
+                    <button onclick="toggleFullscreen()" class="absolute bottom-4 right-4 bg-apple-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        Toggle Fullscreen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-apple-blue">About Drift Car Multiplayer</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <p class="mb-4">Drift Car Multiplayer is an exciting drifting game that combines realistic physics with competitive multiplayer action. Get behind the wheel of high-performance vehicles and compete with players worldwide in this adrenaline-fueled racing experience.</p>
+                        <p class="mb-4">With three unique racing cars to unlock and extensive customization options, you can create your perfect drifting machine. The game features stunning graphics, realistic car sounds, and fluid drifting mechanics that make every race exciting.</p>
+                        <p>Choose between single-player mode for practice or jump into online multiplayer to compete with other players. With three different map options featuring varying conditions and atmospheres, every race offers a unique challenge.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-apple-green">Game Features</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Three unique racing cars to unlock</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Extensive vehicle customization options</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Single-player and online multiplayer modes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Three unique maps with different conditions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Realistic physics and drifting mechanics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-apple-green mr-2">✓</span> 
+                                <span>Competitive online gameplay</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructions" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-apple-blue">How to Play</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Controls</h3>
+                        <p>Use W-A-S-D keys to control your vehicle. Press C to change camera view and space to brake. Master these controls to perform perfect drifts.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Progression</h3>
+                        <p>Earn points and rewards by performing high-level drifts to unlock new cars and customization options for your vehicles.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Game Modes</h3>
+                        <p>Choose between single-player mode for practice or compete against other players in online multiplayer matches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Drift Car Multiplayer</h2>
+                    <p class="text-gray-400">An action-packed drifting game that combines realistic physics with competitive multiplayer action.</p>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Quick Links</h2>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/" class="hover:text-apple-blue transition-colors">Home</a></li>
+                        <li><a href="#game" class="hover:text-apple-blue transition-colors">Play Game</a></li>
+                        <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
+                        <li><a href="#instructions" class="hover:text-apple-blue transition-colors">How to Play</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Legal</h2>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-apple-blue transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ChaseDrifter.com - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html> 
