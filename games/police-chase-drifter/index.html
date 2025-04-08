@@ -9,47 +9,100 @@
     <link rel="canonical" href="https://chasedrifter.com/games/police-chase-drifter">
     <link rel="icon" type="image/png" href="/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'apple-blue': '#007AFF',
-                        'apple-green': '#34C759',
-                        'apple-red': '#FF3B30',
-                        'apple-gray': '#8E8E93',
-                        'apple-light': '#F2F2F7',
+                        'game-blue': '#00A6FB',
+                        'game-red': '#FF206E',
+                        'game-yellow': '#FFD700',
+                        'game-purple': '#9B5DE5',
+                        'game-dark': '#0A0A0A',
+                        'game-light': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'game': ['Orbitron', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
                     }
                 }
             }
         }
     </script>
+    <style>
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .game-title {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .game-button {
+            position: relative;
+            overflow: hidden;
+        }
+        .game-button:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+        .game-button:hover:after {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        .racing-stripes {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(0, 166, 251, 0.1) 10px,
+                rgba(0, 166, 251, 0.1) 20px
+            );
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, #00A6FB 0%, #9B5DE5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body class="bg-apple-light text-gray-800 font-sans">
-    <header class="bg-white shadow-sm">
+<body class="bg-game-dark text-white font-game">
+    <header class="bg-gradient-to-r from-game-dark to-game-blue shadow-lg">
         <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
             <div class="text-center md:text-left mb-4 md:mb-0">
-                <a href="/" class="text-2xl font-bold text-apple-blue">ChaseDrifter.com</a>
+                <a href="/" class="text-3xl font-bold text-game-yellow game-title">ChaseDrifter.com</a>
             </div>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="/" class="hover:text-apple-blue transition-colors">Home</a></li>
-                    <li><a href="#game" class="hover:text-apple-blue transition-colors">Play Game</a></li>
-                    <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
-                    <li><a href="#instructions" class="hover:text-apple-blue transition-colors">How to Play</a></li>
+                    <li><a href="/" class="hover:text-game-yellow transition-colors text-game-light">Home</a></li>
+                    <li><a href="#game" class="hover:text-game-yellow transition-colors text-game-light">Play Game</a></li>
+                    <li><a href="#about" class="hover:text-game-yellow transition-colors text-game-light">About</a></li>
+                    <li><a href="#instructions" class="hover:text-game-yellow transition-colors text-game-light">How to Play</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-8">
-        <section class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-blue">Police Chase Drifter</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">The ultimate police chase game where speed, skill, and drifting tactics determine your success on the streets.</p>
+        <section class="text-center mb-12 racing-stripes py-12 rounded-xl">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 text-game-yellow game-title">Police Chase Drifter</h1>
+            <p class="text-xl text-game-light max-w-3xl mx-auto">The ultimate police chase game where speed, skill, and drifting tactics determine your success on the streets.</p>
         </section>
 
         <section id="game" class="mb-16">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg overflow-hidden border-2 border-game-yellow">
                 <div class="relative">
                     <div class="aspect-w-16 aspect-h-9 w-full">
                         <iframe src="https://cloud.onlinegames.io/games/2021/3/police-chase-drifter/index.html" 
@@ -58,7 +111,7 @@
                                 loading="lazy">
                         </iframe>
                     </div>
-                    <button onclick="toggleFullscreen()" class="absolute bottom-4 right-4 bg-apple-blue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    <button onclick="toggleFullscreen()" class="game-button absolute bottom-4 right-4 bg-game-red text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
                         Toggle Fullscreen
                     </button>
                 </div>
@@ -66,40 +119,40 @@
         </section>
 
         <section id="about" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-apple-blue">About Police Chase Drifter</h2>
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold mb-6 text-game-yellow game-title">About Police Chase Drifter</h2>
+            <div class="bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg p-8 border-2 border-game-yellow">
                 <div class="grid md:grid-cols-2 gap-12">
                     <div>
-                        <p class="mb-4">Police Chase Drifter is an exciting police chase racing game that puts you in the driver's seat of high-performance vehicles. Experience the thrill of drifting through city streets while evading pursuers in this adrenaline-fueled adventure.</p>
-                        <p class="mb-4">With stunning graphics, realistic physics, and challenging gameplay, Police Chase Drifter offers an immersive racing experience that will test your reflexes and driving skills. Navigate through traffic, perform spectacular drifts, and outrun the police to become the ultimate street racer.</p>
-                        <p>Whether you're a casual gamer or a racing enthusiast, Police Chase Drifter delivers an action-packed experience that will keep you coming back for more.</p>
+                        <p class="mb-4 text-game-light">Police Chase Drifter is an exciting police chase racing game that puts you in the driver's seat of high-performance vehicles. Experience the thrill of drifting through city streets while evading pursuers in this adrenaline-fueled adventure.</p>
+                        <p class="mb-4 text-game-light">With stunning graphics, realistic physics, and challenging gameplay, Police Chase Drifter offers an immersive racing experience that will test your reflexes and driving skills. Navigate through traffic, perform spectacular drifts, and outrun the police to become the ultimate street racer.</p>
+                        <p class="text-game-light">Whether you're a casual gamer or a racing enthusiast, Police Chase Drifter delivers an action-packed experience that will keep you coming back for more.</p>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-apple-green">Game Features</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-game-yellow">Game Features</h3>
                         <ul class="space-y-2">
                             <li class="flex items-start">
-                                <span class="text-apple-green mr-2">✓</span> 
-                                <span>Multiple high-performance vehicles to choose from</span>
+                                <span class="feature-icon text-2xl mr-2">✓</span> 
+                                <span class="text-game-light">Multiple high-performance vehicles to choose from</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-apple-green mr-2">✓</span> 
-                                <span>Realistic drifting mechanics for an authentic racing feel</span>
+                                <span class="feature-icon text-2xl mr-2">✓</span> 
+                                <span class="text-game-light">Realistic drifting mechanics for an authentic racing feel</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-apple-green mr-2">✓</span> 
-                                <span>Diverse urban environments with challenging tracks</span>
+                                <span class="feature-icon text-2xl mr-2">✓</span> 
+                                <span class="text-game-light">Diverse urban environments with challenging tracks</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-apple-green mr-2">✓</span> 
-                                <span>Progressive difficulty levels to test your skills</span>
+                                <span class="feature-icon text-2xl mr-2">✓</span> 
+                                <span class="text-game-light">Progressive difficulty levels to test your skills</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-apple-green mr-2">✓</span> 
-                                <span>Score-based gameplay with global leaderboards</span>
+                                <span class="feature-icon text-2xl mr-2">✓</span> 
+                                <span class="text-game-light">Score-based gameplay with global leaderboards</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-apple-green mr-2">✓</span> 
-                                <span>Free to play with no downloads required</span>
+                                <span class="feature-icon text-2xl mr-2">✓</span> 
+                                <span class="text-game-light">Free to play with no downloads required</span>
                             </li>
                         </ul>
                     </div>
@@ -108,61 +161,61 @@
         </section>
 
         <section id="instructions" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-apple-blue">How to Play</h2>
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold mb-6 text-game-yellow game-title">How to Play</h2>
+            <div class="bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg p-8 border-2 border-game-yellow">
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-xl font-bold">1</span>
+                        <div class="bg-gradient-to-br from-game-blue to-game-purple text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold">1</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Controls</h3>
-                        <p>Use arrow keys or WASD to control your vehicle. Press spacebar for handbrake to initiate drifts around corners.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-game-yellow">Controls</h3>
+                        <p class="text-game-light">Use arrow keys or WASD to control your vehicle. Press spacebar for handbrake to initiate drifts around corners.</p>
                     </div>
                     <div class="text-center">
-                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-xl font-bold">2</span>
+                        <div class="bg-gradient-to-br from-game-blue to-game-purple text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold">2</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Objectives</h3>
-                        <p>Complete tracks within the time limit, earn points for successful drifts, and avoid getting caught by police vehicles.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-game-yellow">Objectives</h3>
+                        <p class="text-game-light">Complete tracks within the time limit, earn points for successful drifts, and avoid getting caught by police vehicles.</p>
                     </div>
                     <div class="text-center">
-                        <div class="bg-apple-blue text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-xl font-bold">3</span>
+                        <div class="bg-gradient-to-br from-game-blue to-game-purple text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold">3</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Scoring</h3>
-                        <p>Earn points based on drift quality, duration, and speed. Chain multiple drifts together for combo multipliers.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-game-yellow">Scoring</h3>
+                        <p class="text-game-light">Earn points based on drift quality, duration, and speed. Chain multiple drifts together for combo multipliers.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gradient-to-r from-game-dark to-game-blue text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Police Chase Drifter</h2>
-                    <p class="text-gray-400">The ultimate police chase racing game that combines speed, skill, and strategy for an exhilarating gaming experience.</p>
+                    <h2 class="text-xl font-bold mb-4 text-game-yellow">Police Chase Drifter</h2>
+                    <p class="text-game-light">The ultimate police chase racing game that combines speed, skill, and strategy for an exhilarating gaming experience.</p>
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Quick Links</h2>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/" class="hover:text-apple-blue transition-colors">Home</a></li>
-                        <li><a href="#game" class="hover:text-apple-blue transition-colors">Play Game</a></li>
-                        <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
-                        <li><a href="#instructions" class="hover:text-apple-blue transition-colors">How to Play</a></li>
+                    <h2 class="text-xl font-bold mb-4 text-game-yellow">Quick Links</h2>
+                    <ul class="space-y-2 text-game-light">
+                        <li><a href="/" class="hover:text-game-yellow transition-colors">Home</a></li>
+                        <li><a href="#game" class="hover:text-game-yellow transition-colors">Play Game</a></li>
+                        <li><a href="#about" class="hover:text-game-yellow transition-colors">About</a></li>
+                        <li><a href="#instructions" class="hover:text-game-yellow transition-colors">How to Play</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Legal</h2>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-apple-blue transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-apple-blue transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-apple-blue transition-colors">Contact Us</a></li>
+                    <h2 class="text-xl font-bold mb-4 text-game-yellow">Legal</h2>
+                    <ul class="space-y-2 text-game-light">
+                        <li><a href="#" class="hover:text-game-yellow transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-game-yellow transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-game-yellow transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+            <div class="border-t border-game-blue pt-8 text-center text-game-light">
                 <p>&copy; 2024 ChaseDrifter.com - All Rights Reserved</p>
             </div>
         </div>

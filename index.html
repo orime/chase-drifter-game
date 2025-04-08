@@ -9,129 +9,177 @@
     <link rel="canonical" href="https://chasedrifter.com">
     <link rel="icon" type="image/png" href="/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'apple-blue': '#007AFF',
-                        'apple-green': '#34C759',
-                        'apple-red': '#FF3B30',
-                        'apple-gray': '#8E8E93',
-                        'apple-light': '#F2F2F7',
+                        'game-blue': '#00A6FB',
+                        'game-red': '#FF206E',
+                        'game-yellow': '#FFD700',
+                        'game-purple': '#9B5DE5',
+                        'game-dark': '#0A0A0A',
+                        'game-light': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'game': ['Orbitron', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
                     }
                 }
             }
         }
     </script>
+    <style>
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .game-title {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .game-button {
+            position: relative;
+            overflow: hidden;
+        }
+        .game-button:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+        .game-button:hover:after {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        .racing-stripes {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(0, 166, 251, 0.1) 10px,
+                rgba(0, 166, 251, 0.1) 20px
+            );
+        }
+    </style>
 </head>
-<body class="bg-apple-light text-gray-800 font-sans">
-    <header class="bg-white shadow-sm">
+<body class="bg-game-dark text-white font-game">
+    <header class="bg-gradient-to-r from-game-dark to-game-blue shadow-lg">
         <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
             <div class="text-center md:text-left mb-4 md:mb-0">
-                <a href="/" class="text-2xl font-bold text-apple-blue">ChaseDrifter.com</a>
+                <a href="/" class="text-3xl font-bold text-game-yellow game-title">ChaseDrifter.com</a>
             </div>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="#games" class="hover:text-apple-blue transition-colors">Games</a></li>
-                    <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
+                    <li><a href="#games" class="hover:text-game-yellow transition-colors text-game-light">Games</a></li>
+                    <li><a href="#about" class="hover:text-game-yellow transition-colors text-game-light">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-8">
-        <section class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-blue">Best Racing Games Collection</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the thrill of high-speed racing, drifting, and police chases in our collection of premium racing games.</p>
+        <section class="text-center mb-12 racing-stripes py-12 rounded-xl">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 text-game-yellow game-title">Best Racing Games Collection</h1>
+            <p class="text-xl text-game-light max-w-3xl mx-auto">Experience the thrill of high-speed racing, drifting, and police chases in our collection of premium racing games.</p>
         </section>
 
         <section id="games" class="mb-16">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Police Chase Drifter -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="game-card bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg overflow-hidden border-2 border-game-yellow">
                     <div class="aspect-w-16 aspect-h-9">
                         <img src="/images/Police Chase Drifter.png" alt="Police Chase Drifter" class="w-full h-48 object-cover">
                     </div>
                     <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2 text-apple-blue">Police Chase Drifter</h2>
-                        <p class="text-gray-600 mb-4">Experience the thrill of police chases in this action-packed racing game. Drift through city streets and outmaneuver your pursuers.</p>
-                        <a href="/games/police-chase-drifter" class="inline-block bg-apple-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">Play Now</a>
+                        <h2 class="text-2xl font-bold mb-2 text-game-yellow">Police Chase Drifter</h2>
+                        <p class="text-game-light mb-4">Experience the thrill of police chases in this action-packed racing game. Drift through city streets and outmaneuver your pursuers.</p>
+                        <a href="/games/police-chase-drifter" class="game-button inline-block bg-game-red text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors">Play Now</a>
                     </div>
                 </div>
 
                 <!-- Ultimate Car Driving -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="game-card bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg overflow-hidden border-2 border-game-yellow">
                     <div class="aspect-w-16 aspect-h-9">
                         <img src="/images/Ultimate Car Driving.png" alt="Ultimate Car Driving" class="w-full h-48 object-cover">
                     </div>
                     <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2 text-apple-blue">Ultimate Car Driving</h2>
-                        <p class="text-gray-600 mb-4">Choose your driving mode, customize your vehicle, and experience realistic car physics in this immersive driving simulator.</p>
-                        <a href="/games/ultimate-car-driving" class="inline-block bg-apple-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">Play Now</a>
+                        <h2 class="text-2xl font-bold mb-2 text-game-yellow">Ultimate Car Driving</h2>
+                        <p class="text-game-light mb-4">Choose your driving mode, customize your vehicle, and experience realistic car physics in this immersive driving simulator.</p>
+                        <a href="/games/ultimate-car-driving" class="game-button inline-block bg-game-red text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors">Play Now</a>
                     </div>
                 </div>
 
                 <!-- Drift Car Multiplayer -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="game-card bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg overflow-hidden border-2 border-game-yellow">
                     <div class="aspect-w-16 aspect-h-9">
                         <img src="/images/Drift Car Multiplayer.png" alt="Drift Car Multiplayer" class="w-full h-48 object-cover">
                     </div>
                     <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2 text-apple-blue">Drift Car Multiplayer</h2>
-                        <p class="text-gray-600 mb-4">Compete with players worldwide in this action-packed drifting game. Customize your cars and master the art of drifting.</p>
-                        <a href="/games/drift-car-multiplayer" class="inline-block bg-apple-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">Play Now</a>
+                        <h2 class="text-2xl font-bold mb-2 text-game-yellow">Drift Car Multiplayer</h2>
+                        <p class="text-game-light mb-4">Compete with players worldwide in this action-packed drifting game. Customize your cars and master the art of drifting.</p>
+                        <a href="/games/drift-car-multiplayer" class="game-button inline-block bg-game-red text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors">Play Now</a>
                     </div>
                 </div>
                 
                 <!-- Police Car Escape Simulator -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="game-card bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg overflow-hidden border-2 border-game-yellow">
                     <div class="aspect-w-16 aspect-h-9">
                         <img src="images/Police Car Escape Simulator.png" alt="Police Car Escape Simulator" class="w-full h-48 object-cover">
                     </div>
                     <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2 text-apple-blue">Police Car Escape Simulator</h2>
-                        <p class="text-gray-600 mb-4">Escape from pursuing police cars in desert landscapes, use rockets and driving skills to neutralize pursuers in this action-packed simulator.</p>
-                        <a href="/games/police-car-escape-simulator" class="inline-block bg-apple-blue text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">Play Now</a>
+                        <h2 class="text-2xl font-bold mb-2 text-game-yellow">Police Car Escape Simulator</h2>
+                        <p class="text-game-light mb-4">Escape from pursuing police cars in desert landscapes, use rockets and driving skills to neutralize pursuers in this action-packed simulator.</p>
+                        <a href="/games/police-car-escape-simulator" class="game-button inline-block bg-game-red text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors">Play Now</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-apple-blue">About Our Games</h2>
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <p class="mb-4">Welcome to ChaseDrifter.com, your ultimate destination for high-quality racing and drifting games. Our collection features carefully selected games that offer the best gaming experience for racing enthusiasts.</p>
-                <p class="mb-4">Each game in our collection is chosen for its unique features, realistic physics, and engaging gameplay. Whether you're a casual gamer or a racing enthusiast, you'll find games that match your skill level and preferences.</p>
-                <p>All our games are free to play and require no downloads. Simply choose a game, click play, and enjoy the thrill of racing!</p>
+            <h2 class="text-3xl font-bold mb-6 text-game-yellow game-title">About Our Games</h2>
+            <div class="bg-gradient-to-br from-game-dark to-game-blue rounded-xl shadow-lg p-8 border-2 border-game-yellow">
+                <p class="mb-4 text-game-light">Welcome to ChaseDrifter.com, your ultimate destination for high-quality racing and drifting games. Our collection features carefully selected games that offer the best gaming experience for racing enthusiasts.</p>
+                <p class="mb-4 text-game-light">Each game in our collection is chosen for its unique features, realistic physics, and engaging gameplay. Whether you're a casual gamer or a racing enthusiast, you'll find games that match your skill level and preferences.</p>
+                <p class="text-game-light">All our games are free to play and require no downloads. Simply choose a game, click play, and enjoy the thrill of racing!</p>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gradient-to-r from-game-dark to-game-blue text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <h2 class="text-xl font-bold mb-4">ChaseDrifter.com</h2>
-                    <p class="text-gray-400">Your ultimate destination for high-quality racing and drifting games.</p>
+                    <h2 class="text-xl font-bold mb-4 text-game-yellow">ChaseDrifter.com</h2>
+                    <p class="text-game-light">Your ultimate destination for high-quality racing and drifting games.</p>
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Quick Links</h2>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#games" class="hover:text-apple-blue transition-colors">Games</a></li>
-                        <li><a href="#about" class="hover:text-apple-blue transition-colors">About</a></li>
+                    <h2 class="text-xl font-bold mb-4 text-game-yellow">Quick Links</h2>
+                    <ul class="space-y-2 text-game-light">
+                        <li><a href="#games" class="hover:text-game-yellow transition-colors">Games</a></li>
+                        <li><a href="#about" class="hover:text-game-yellow transition-colors">About</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="text-xl font-bold mb-4">Legal</h2>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-apple-blue transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-apple-blue transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-apple-blue transition-colors">Contact Us</a></li>
+                    <h2 class="text-xl font-bold mb-4 text-game-yellow">Legal</h2>
+                    <ul class="space-y-2 text-game-light">
+                        <li><a href="#" class="hover:text-game-yellow transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-game-yellow transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-game-yellow transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+            <div class="border-t border-game-blue pt-8 text-center text-game-light">
                 <p>&copy; 2024 ChaseDrifter.com - All Rights Reserved</p>
             </div>
         </div>
